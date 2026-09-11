@@ -122,37 +122,21 @@
   </section>
   <section id="code-example">
     <h2>Code Example</h2>
-    <pre><code>import { Component } from '@angular/core';
+    <p>Codewars example in TypeScript (<strong>Two Sum</strong> kata):</p>
+    <pre><code>export function twoSum(numbers: number[], target: number): number[] {
+  const seen = new Map&lt;number, number&gt;();
 
-@Component({
-  selector: 'app-skill-tag',
-  standalone: true,
-  template: `
-    &lt;ul class="tags"&gt;
-      &lt;li *ngFor="let skill of skills"&gt;{{ skill }}&lt;/li&gt;
-    &lt;/ul&gt;
-  `,
-  styles: `
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+  for (let i = 0; i &lt; numbers.length; i++) {
+    const complement = target - numbers[i];
+
+    if (seen.has(complement)) {
+      return [seen.get(complement)!, i];
     }
 
-    .tags li {
-      background: #f5f0e8;
-      border: 1px solid #d7cec5;
-      border-radius: 4px;
-      padding: 0.35rem 0.65rem;
-      font-size: 0.8rem;
-    }
-  `
-})
-export class SkillTagComponent {
-  skills = ['Angular', 'TypeScript', 'HTML', 'CSS'];
+    seen.set(numbers[i], i);
+  }
+
+  return [];
 }</code></pre>
   </section>
   <section id="education">
