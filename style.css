@@ -134,6 +134,7 @@ body {
  
 main {
   padding: 2.5rem 3rem 3.5rem;
+  min-width: 0;
 }
  
 main section {
@@ -212,6 +213,7 @@ main p {
 }
  
 pre {
+  max-width: 100%;
   background: var(--panel);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
